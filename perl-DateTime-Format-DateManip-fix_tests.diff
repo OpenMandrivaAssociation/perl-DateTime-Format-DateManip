@@ -1,0 +1,13 @@
+Index: t/01conversions.t
+===================================================================
+--- t/01conversions.t
++++ t/01conversions.t	2010-05-05 22:23:36.000000000 +0200
+@@ -10,7 +10,7 @@
+ my $dfdm = "DateTime::Format::DateManip";
+ 
+ ## Set the timezone for Date::Manip and DateTime
+-my $dm_tz = "EST";
++my $dm_tz = "US/Eastern";
+ my $dt_tz = "US/Eastern";
+ 
+ # Setup Date::Manip manually so we can force the TZ to beat a config
