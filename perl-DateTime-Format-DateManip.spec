@@ -13,6 +13,7 @@ Source0:    http://www.cpan.org/modules/by-module/DateTime/%{upstream_name}-%{up
 # patch from https://rt.cpan.org/Public/Bug/Display.html?id=55771
 Patch0:     perl-DateTime-Format-DateManip-fix_tests.diff
 
+BuildRequires:	make
 BuildRequires: perl(Carp)
 BuildRequires: perl(Date::Manip)
 BuildRequires: perl(DateTime)
