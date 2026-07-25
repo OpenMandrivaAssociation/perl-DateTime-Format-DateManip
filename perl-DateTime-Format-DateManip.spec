@@ -2,14 +2,14 @@
 %define upstream_version 0.04
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    4
+Version:    %{upstream_version}
+Release:    5
 
 Summary:    Perl DateTime extension to convert
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/DateTime/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://metacpan.org/dist/DateTime-Format-DateManip
+Source0:    https://cpan.metacpan.org/authors/id/B/BB/BBENNETT/dt-fmt-datemanip/DateTime-Format-DateManip-%{upstream_version}.tar.gz
 # patch from https://rt.cpan.org/Public/Bug/Display.html?id=55771
 Patch0:     perl-DateTime-Format-DateManip-fix_tests.diff
 
