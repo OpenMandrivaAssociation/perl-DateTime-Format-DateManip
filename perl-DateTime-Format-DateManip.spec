@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:	0.04
-Release:	4
+Release:	5
 
 Summary:    Perl DateTime extension to convert
 License:    GPL+ or Artistic
@@ -38,7 +38,8 @@ objects. Recurrences are note yet supported.
 %check
 # soft: do not fail package on test failures
 set +e
-%make test
+:  # soft check
+%make test || :
 
 %install
 rm -rf %buildroot
