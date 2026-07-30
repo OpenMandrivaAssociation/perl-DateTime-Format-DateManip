@@ -3,13 +3,13 @@
 
 Name:       perl-%{upstream_name}
 Version:    %{upstream_version}
-Release:    5
+Release:	1
 
 Summary:    Perl DateTime extension to convert
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        https://metacpan.org/dist/DateTime-Format-DateManip
-Source0:    https://cpan.metacpan.org/authors/id/B/BB/BBENNETT/dt-fmt-datemanip/DateTime-Format-DateManip-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/B/BB/BBENNETT/dt-fmt-datemanip/DateTime-Format-DateManip-0.04.tar.gz
 # patch from https://rt.cpan.org/Public/Bug/Display.html?id=55771
 Patch0:     perl-DateTime-Format-DateManip-fix_tests.diff
 
@@ -29,7 +29,7 @@ objects. Recurrences are note yet supported.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-%patch0 -p0
+%patch -P0 -p0
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 
@@ -54,15 +54,3 @@ rm -rf %buildroot
 
 
 
-%changelog
-* Mon Apr 18 2011 Funda Wang <fwang@mandriva.org> 0.40.0-2mdv2011.0
-+ Revision: 654909
-- rebuild for updated spec-helper
-
-* Wed May 05 2010 Michael Scherer <misc@mandriva.org> 0.40.0-1mdv2011.0
-+ Revision: 542675
-- import perl-DateTime-Format-DateManip
-
-
-* Wed May 05 2010 cpan2dist 0.04-1mdv
-- initial mdv release, generated with cpan2dist
