@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:	0.04
-Release:	5
+Release:	6
 
 Summary:    Perl DateTime extension to convert
 License:    GPL+ or Artistic
@@ -14,13 +14,13 @@ Source0:	https://cpan.metacpan.org/authors/id/B/BB/BBENNETT/dt-fmt-datemanip/Dat
 Patch0:     perl-DateTime-Format-DateManip-fix_tests.diff
 
 BuildRequires:	make
+BuildRequires:	perl-devel
 BuildRequires: perl(Carp)
 BuildRequires: perl(Date::Manip)
 BuildRequires: perl(DateTime)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Module::Build::Compat)
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 DateTime::Format::DateManip is a class that knows how to convert between
@@ -31,18 +31,17 @@ objects. Recurrences are note yet supported.
 %setup -q -n DateTime-Format-DateManip-0.04
 %patch -P0 -p0
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 
-%make
-
+%make_build
 %check
 # soft: do not fail package on test failures
 set +e
 :  # soft check
+:  # soft check
 %make test || :
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
 
